@@ -1,0 +1,29 @@
+<div class="jumbotron py-2">
+  <h1 class="display-4 text-center">Member Form</h1>
+</div>
+<div class="row">
+
+<app-member-form></app-member-form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of service.list">
+        <td (click)="populateForm(row)">{{row.firstName}}</td>
+        <td (click)="populateForm(row)">{{row.middleName}}</td>
+        <td (click)="populateForm(row)">{{row.lastName}}</td>
+        <td>
+          <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(row.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
